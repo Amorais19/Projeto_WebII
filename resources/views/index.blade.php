@@ -18,8 +18,8 @@
 </div>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Fluid jumbotron</h1>
-    <p class="lead">Este é um jumbotron modificado que ocupa todo o espaço horizontal de seu elemento pai.</p>
+    <h1 class="display-4">Princesas</h1>
+    <p class="lead">Este é um site para classificar princesas :) </p>
   </div>
 </div>
 @endsection
