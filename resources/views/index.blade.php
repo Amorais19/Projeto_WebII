@@ -18,8 +18,36 @@
 </div>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Princesas</h1>
-    <p class="lead">Este é um site para classificar princesas :) </p>
+    <h1 class="display-4 text-color">Princesas</h1>
+    <p class="lead text-color">Este é um site para classificar princesas :) <br> Você pode ser tudo o que quiser! </p>
   </div>
+</div>
+<div class="container marketing">
+
+<div class="row">
+    <div class="col-lg-3">
+        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="160" height="160">
+        <h2>Elementos</h2>
+        <p>Cadastre aqui os elementos da natureza</p>
+        <p><a class="btn btn-secondary" href="#" role="button">cadastrar &raquo;</a></p>
+    </div>
+    <div class="col-lg-3">
+        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="160" height="160">
+        <h2>Tipos</h2>
+        <p>Cadastre aqui os tipos de princesas existentes</p>
+        <p><a class="btn btn-secondary" href="#" role="button">cadastrar &raquo;</a></p>
+    </div>
+    <div class="col-lg-3">
+        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="160" height="160">
+        <h2>Reinos</h2>
+        <p>Cadastre aqui os reinos conhecidos por você</p>
+        <p><a class="btn btn-secondary" href="#" role="button">cadastrar &raquo;</a></p>
+    </div>
+    <div class="col-lg-3">
+        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="160" height="160">
+        <h2>Princesas</h2>
+        <p>Cadastre aqui sua princesa, e suas características</p>
+        <p><a class="btn btn-secondary" href="#" role="button">cadastrar &raquo;</a></p>
+    </div>
 </div>
 @endsection

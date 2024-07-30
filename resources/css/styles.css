@@ -1,10 +1,24 @@
 .navbarzinha {
-    background-color: #70A7BC;
-    margin:0
+    background-color: #85b6ca;
 }
 .jumbotron {
-    background-color: #70A7BC;
-    
+    background-color: #9ec9db;
+    padding: 100px;
+    margin-bottom: 60px;
+}
+.text-color {
+    color: #fff;
+}
+.btn-secondary{
+    background-color: #E3B1C9;
+    border-color: #ad6286;
+}
+.btn-secondary:hover{
+    background-color: #ad6286;
+    border-color: #ad6286;
+}
+.col-lg-3{
+    text-align: center;
 }
 
 
