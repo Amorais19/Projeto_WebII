@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Reino extends Model
 {
     use HasFactory;
-    protected $fillable = ['localidade'];
+    protected $fillable = ['nome_reino'];
 }

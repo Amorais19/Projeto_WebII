@@ -12,6 +12,7 @@
             <a class="nav-item nav-link" href="#">Princesas</a>
             <a class="nav-item nav-link" href="#">Elementos</a>
             <a class="nav-item nav-link" href="#">Tipos</a>
+            <a class="nav-item nav-link" href="#">Reino</a>
             </div>
         </div>
     </nav>
@@ -26,25 +27,25 @@
 
 <div class="row">
     <div class="col-lg-3">
-        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="160" height="160">
+        <img class="rounded-circle" src="{{asset('storage/Imagens/elements.jpg')}}" alt="Princess" width="160" height="160">
         <h2>Elementos</h2>
-        <p>Cadastre aqui os elementos da natureza</p>
+        <p>Cadastre aqui os elementos presentes na natureza que você conheça</p>
         <p><a class="btn btn-secondary" href="#" role="button">cadastrar &raquo;</a></p>
     </div>
     <div class="col-lg-3">
-        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="160" height="160">
+        <img class="rounded-circle" src="{{asset('storage/Imagens/types.jpeg')}}" alt="Generic placeholder image" width="160" height="160">
         <h2>Tipos</h2>
-        <p>Cadastre aqui os tipos de princesas existentes</p>
+        <p>Cadastre aqui os tipos de princesas existentes (ex: sereia, fada, humana)</p>
         <p><a class="btn btn-secondary" href="#" role="button">cadastrar &raquo;</a></p>
     </div>
     <div class="col-lg-3">
-        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="160" height="160">
+        <img class="rounded-circle" src="{{asset('storage/Imagens/castle.jpeg')}}" alt="Generic placeholder image" width="160" height="160">
         <h2>Reinos</h2>
-        <p>Cadastre aqui os reinos conhecidos por você</p>
+        <p>Cadastre aqui os reinos existentes conhecidos por você (ex: Arendel...)</p>
         <p><a class="btn btn-secondary" href="#" role="button">cadastrar &raquo;</a></p>
     </div>
     <div class="col-lg-3">
-        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="160" height="160">
+        <img class="rounded-circle" src="{{asset('storage/Imagens/princess.jpeg')}}" alt="Generic placeholder image" width="160" height="160">
         <h2>Princesas</h2>
         <p>Cadastre aqui sua princesa, e suas características</p>
         <p><a class="btn btn-secondary" href="#" role="button">cadastrar &raquo;</a></p>
