@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Reino;
 use Illuminate\Support\Facades\DB;
 
-class controllerReino extends Controller
+class ControllerReino extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class controllerReino extends Controller
     public function index()
     {
         $dados = Reino::all();
-        return view('exibirReinos', compact('dados'));
+        return view('exibeReinos', compact('dados'));
     }
 
     /**
@@ -51,7 +51,7 @@ class controllerReino extends Controller
     {
         $dados = Reino::find($id);
         if(isset($dados)){
-            return view('editarReino', compact('dados'));
+            return view('editaReino', compact('dados'));
         }
     }
 

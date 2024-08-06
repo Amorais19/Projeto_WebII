@@ -3,18 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Princesa;
+use App\Models\Princesas;
 use Illuminate\Support\Facades\DB;
+use App\Models\Tipos;
+use App\Models\Elementos;
+use App\Models\Reino;
 
-class controllerPrincesa extends Controller
+
+class ControllerPrincesa extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $dados = Princesa::all();
-        return view('exibirPrincesa', compact('dados'));
+        $dados = Princesas::all();
+        return view('exibePrincesas', compact('dados'));
     }
 
     /**
@@ -22,7 +26,11 @@ class controllerPrincesa extends Controller
      */
     public function create()
     {
-        return view('novaPrincesa');
+        $tipos = Tipos::all();
+        $elementos = Elementos::all();
+        $reinos = Reino::all();
+
+        return view('novaPrincesas', compact('tipos','elementos', 'reinos'));
     }
 
     /**
@@ -30,7 +38,11 @@ class controllerPrincesa extends Controller
      */
     public function store(Request $request)
     {
-        $dados = new Princesa();
+        $dados = new Princesas();
+        $dados->princesa_id = $request->input('princesa');
+        $dados->elemento_id = $request->input('elemento_id');
+        $dados->tipo_id = $request->input('tipo_id');
+        $dados->reino_id = $request->input('reino_id');
         $dados->nomePrincesa = $request->input('nomePrincesa');
         $dados->idade= $request->input('idadePrincesa');
         $dados->save();
@@ -50,9 +62,9 @@ class controllerPrincesa extends Controller
      */
     public function edit(string $id)
     {
-        $dados = Princesa::find($id);
+        $dados = Princesas::find($id);
         if(isset($dados)){
-            return view('editarPrincesa', compact('dados'));
+            return view('editaPrincesa', compact('dados'));
         }
     }
 
@@ -61,7 +73,7 @@ class controllerPrincesa extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $dados = Princesa::find($id);
+        $dados = Princesas::find($id);
         if(isset($dados)){
             $dados->nomePrincesa = $request->input('nomePrincesa');
             $dados->idade = $request->input('idadePrincesa');
@@ -76,7 +88,7 @@ class controllerPrincesa extends Controller
      */
     public function destroy(string $id)
     {
-        $dados = Princesa::find($id);
+        $dados = Princesas::find($id);
         if(isset($dados)){
             $dados->delete();
             return redirect('/princesas')->with('success', 'Princesa deletada com sucesso!');

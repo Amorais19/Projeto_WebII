@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Tipo;
+use App\Models\Tipos;
 use Illuminate\Support\Facades\DB;
 
-class controllerReino extends Controller
+class ControllerTipo extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $dados = Tipo::all();
-        return view('exibirTipos', compact('dados'));
+        $dados = Tipos::all();
+        return view('exibeTipos', compact('dados'));
     }
 
     /**
@@ -30,7 +30,7 @@ class controllerReino extends Controller
      */
     public function store(Request $request)
     {
-        $dados = new Reino();
+        $dados = new Tipos();
         $dados->Nome = $request->input('nomeTipo');
         $dados->save();
         return redirect('/tipos')->with('success', 'Novo tipo cadastrado com sucesso!');
@@ -49,9 +49,9 @@ class controllerReino extends Controller
      */
     public function edit(string $id)
     {
-        $dados = Tipo::find($id);
+        $dados = Tipos::find($id);
         if(isset($dados)){
-            return view('editarTipo', compact('dados'));
+            return view('editaTipo', compact('dados'));
         }
     }
 
@@ -60,7 +60,7 @@ class controllerReino extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $dados = Tipo::find($id);
+        $dados = Tipos::find($id);
         if(isset($dados)){
             $dados->Nome = $request->input('nomeTipo');
             $dados->save();
@@ -74,7 +74,7 @@ class controllerReino extends Controller
      */
     public function destroy(string $id)
     {
-        $dados = Tipoo::find($id);
+        $dados = Tipos::find($id);
         if(isset($dados)){
             $dados->delete();
             return redirect('/tipos')->with('success', 'Tipo deletado com sucesso!');

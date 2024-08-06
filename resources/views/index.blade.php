@@ -1,22 +1,5 @@
 @extends('layout')
 @section('content')
-<div class="container-fluid navbarzinha">
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#">Bibble</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home</a>
-            <a class="nav-item nav-link" href="#">Princesas</a>
-            <a class="nav-item nav-link" href="#">Elementos</a>
-            <a class="nav-item nav-link" href="#">Tipos</a>
-            <a class="nav-item nav-link" href="#">Reino</a>
-            </div>
-        </div>
-    </nav>
-</div>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4 text-color">Princesas</h1>
@@ -27,28 +10,28 @@
 
 <div class="row">
     <div class="col-lg-3">
-        <img class="rounded-circle" src="{{asset('storage/Imagens/elements.jpg')}}" alt="Princess" width="160" height="160">
+        <img class="rounded-circle" src="{{asset('storage/Imagens/elements.jpg')}}" alt="Elemento" width="160" height="160">
         <h2>Elementos</h2>
         <p>Cadastre aqui os elementos presentes na natureza que você conheça</p>
-        <p><a class="btn btn-secondary" href="#" role="button">cadastrar &raquo;</a></p>
+        <p><a class="btn btn-secondary" href="{{route('novoElemento')}}" role="button">cadastrar &raquo;</a></p>
     </div>
     <div class="col-lg-3">
-        <img class="rounded-circle" src="{{asset('storage/Imagens/types.jpeg')}}" alt="Generic placeholder image" width="160" height="160">
+        <img class="rounded-circle" src="{{asset('storage/Imagens/types.jpeg')}}" alt="Tipo" width="160" height="160">
         <h2>Tipos</h2>
         <p>Cadastre aqui os tipos de princesas existentes (ex: sereia, fada, humana)</p>
-        <p><a class="btn btn-secondary" href="#" role="button">cadastrar &raquo;</a></p>
+        <p><a class="btn btn-secondary" href="{{route('novoTipo')}}" role="button">cadastrar &raquo;</a></p>
     </div>
     <div class="col-lg-3">
-        <img class="rounded-circle" src="{{asset('storage/Imagens/castle.jpeg')}}" alt="Generic placeholder image" width="160" height="160">
+        <img class="rounded-circle" src="{{asset('storage/Imagens/castle.jpeg')}}" alt="Reino" width="160" height="160">
         <h2>Reinos</h2>
         <p>Cadastre aqui os reinos existentes conhecidos por você (ex: Arendel...)</p>
-        <p><a class="btn btn-secondary" href="#" role="button">cadastrar &raquo;</a></p>
+        <p><a class="btn btn-secondary" href="{{route('novoReino')}}" role="button">cadastrar &raquo;</a></p>
     </div>
     <div class="col-lg-3">
-        <img class="rounded-circle" src="{{asset('storage/Imagens/princess.jpeg')}}" alt="Generic placeholder image" width="160" height="160">
+        <img class="rounded-circle" src="{{asset('storage/Imagens/princess.jpeg')}}" alt="Princesa" width="160" height="160">
         <h2>Princesas</h2>
         <p>Cadastre aqui sua princesa, e suas características</p>
-        <p><a class="btn btn-secondary" href="#" role="button">cadastrar &raquo;</a></p>
+        <p><a class="btn btn-secondary" href="{{route('novaPrincesas')}}" role="button">cadastrar &raquo;</a></p>
     </div>
 </div>
 @endsection

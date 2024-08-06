@@ -10,8 +10,14 @@ return new class extends Migration
     {
         Schema::create('princesas',function(Blueprint $table){
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('elemento_id');
+            $table->foreign('elemento_id')->references('id')->on('elementos');
+            $table->unsignedBigInteger('tipo_id');
+            $table->foreign('tipo_id')->references('id')->on('tipos');
+            $table->unsignedBigInteger('reino_id');
+            $table->foreign('reino_id')->references('id')->on('reinos');
             $table->string('Nome');
-            $table->number('Idade');
+            $table->integer('Idade');
             $table->timestamps();
         });
     }

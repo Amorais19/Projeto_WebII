@@ -6,15 +6,15 @@ use Illuminate\Http\Request;
 use App\Models\Elementos;
 use Illuminate\Support\Facades\DB;
 
-class controllerReino extends Controller
+class ControllerElemento extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $dados = Elemento::all();
-        return view('exibirElementos', compact('dados'));
+        $dados = Elementos::all();
+        return view('exibeElementos', compact('dados'));
     }
 
     /**
@@ -30,7 +30,7 @@ class controllerReino extends Controller
      */
     public function store(Request $request)
     {
-        $dados = new Elemento();
+        $dados = new Elementos();
         $dados->Nome = $request->input('nomeElemento');
         $dados->save();
         return redirect('/elementos')->with('success', 'Novo elemento cadastrado com sucesso!');
@@ -51,7 +51,7 @@ class controllerReino extends Controller
     {
         $dados = Elementos::find($id);
         if(isset($dados)){
-            return view('editarElementos', compact('dados'));
+            return view('editaElementos', compact('dados'));
         }
     }
 
@@ -60,7 +60,7 @@ class controllerReino extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $dados = Elemento::find($id);
+        $dados = Elementos::find($id);
         if(isset($dados)){
             $dados->Nome = $request->input('nomeElemento');
             $dados->save();
@@ -74,7 +74,7 @@ class controllerReino extends Controller
      */
     public function destroy(string $id)
     {
-        $dados = Elemento::find($id);
+        $dados = Elementos::find($id);
         if(isset($dados)){
             $dados->delete();
             return redirect('/elementos')->with('success', 'Elemento deletado com sucesso!');
