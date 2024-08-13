@@ -24,13 +24,10 @@
                     <tr>
                         <td>{{ $item->Nome }}</td>
                         <td style="text-align:center">
-                            <a href="/reinos" class="btn btn-success">Cadastra reino</a>
+                            <a href="/reino/edita/{{$item->id}}" class="btn btn-outline-primary">Editar</a>
                         </td>
                         <td style="text-align:center">
-                            <a href="/reinos/edita/{id}" class="btn btn-outline-primary">Editar</a>
-                        </td>
-                        <td style="text-align:center">
-                            <a href="/reinos/apagar/{id}" class="btn btn-outline-danger" 
+                            <a href="/reino/apagar/{{$item->id}}" class="btn btn-outline-danger" 
                                onclick="return confirm('Tem certeza de que deseja remover?');">Deletar</a>
                         </td>
                     </tr>  

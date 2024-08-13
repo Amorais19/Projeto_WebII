@@ -8,7 +8,7 @@
                 <h1 class="mt-5 text-center">Atualize os dados do tipo</h1>
             </div>
         </div>
-        <form action="/tipos/{{$dados->id}}" method="POST">
+        <form action="/tipo/{{$dados->id}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="nomeTipo">Nome:</label>

@@ -26,5 +26,14 @@ body.centralizando {
 .col-lg-3{
     text-align: center;
 }
+.seletor{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.org{
+    justify-content: center;
+    align-items: center;
+}
 
 

@@ -24,13 +24,10 @@
                     <tr>
                         <td>{{ $item->Nome }}</td>
                         <td style="text-align:center">
-                            <a href="/tipo" class="btn btn-success">Cadastra tipo</a>
+                            <a href="/tipo/edita/{{$item->id}}" class="btn btn-outline-primary">Editar</a>
                         </td>
                         <td style="text-align:center">
-                            <a href="/tipo/edita/{id}" class="btn btn-outline-primary">Editar</a>
-                        </td>
-                        <td style="text-align:center">
-                            <a href="/tipo/apagar/{id}" class="btn btn-outline-danger" 
+                            <a href="/tipo/apagar/{{$item->id}}" class="btn btn-outline-danger" 
                                onclick="return confirm('Tem certeza de que deseja remover?');">Deletar</a>
                         </td>
                     </tr>  

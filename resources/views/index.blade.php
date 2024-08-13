@@ -16,7 +16,7 @@
         <p><a class="btn btn-secondary" href="{{route('novoElemento')}}" role="button">cadastrar &raquo;</a></p>
     </div>
     <div class="col-lg-3">
-        <img class="rounded-circle" src="{{asset('storage/Imagens/types.jpeg')}}" alt="Tipo" width="160" height="160">
+        <img class="rounded-circle" src="{{asset('storage/Imagens/types.jpg')}}" alt="Tipo" width="160" height="160">
         <h2>Tipos</h2>
         <p>Cadastre aqui os tipos de princesas existentes (ex: sereia, fada, humana)</p>
         <p><a class="btn btn-secondary" href="{{route('novoTipo')}}" role="button">cadastrar &raquo;</a></p>

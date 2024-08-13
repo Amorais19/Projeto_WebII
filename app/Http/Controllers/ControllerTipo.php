@@ -33,7 +33,7 @@ class ControllerTipo extends Controller
         $dados = new Tipos();
         $dados->Nome = $request->input('nomeTipo');
         $dados->save();
-        return redirect('/tipos')->with('success', 'Novo tipo cadastrado com sucesso!');
+        return redirect('/tipo')->with('success', 'Novo tipo cadastrado com sucesso!');
     }
 
     /**
@@ -51,7 +51,7 @@ class ControllerTipo extends Controller
     {
         $dados = Tipos::find($id);
         if(isset($dados)){
-            return view('editaTipo', compact('dados'));
+            return view('editaTipos', compact('dados'));
         }
     }
 
@@ -64,9 +64,9 @@ class ControllerTipo extends Controller
         if(isset($dados)){
             $dados->Nome = $request->input('nomeTipo');
             $dados->save();
-            return redirect('/tipos')->with('success', 'Tipo atualizado com sucesso!');
+            return redirect('/tipo')->with('success', 'Tipo atualizado com sucesso!');
         }
-        return redirect('/tipos')->with('danger', 'Erro ao tentar atualizar o tipo.');
+        return redirect('/tipo')->with('danger', 'Erro ao tentar atualizar o tipo.');
     }
 
     /**
@@ -75,11 +75,13 @@ class ControllerTipo extends Controller
     public function destroy(string $id)
     {
         $dados = Tipos::find($id);
+        
         if(isset($dados)){
             $dados->delete();
-            return redirect('/tipos')->with('success', 'Tipo deletado com sucesso!');
+            return redirect('/tipo')->with('success', 'Tipo deletado com sucesso!');
         }
-        return redirect('/tipos')->with('danger', 'Erro ao tentar deletar o tipo.');
+        return redirect('/tipo')->with('danger', 'Erro ao tentar deletar o tipo.');
+        
     }
 
     public function pesquisarTipo(){

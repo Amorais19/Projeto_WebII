@@ -11,9 +11,9 @@
         <form action="{{route('gravaNovoReino')}}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="nomeReino">Nome:</label>
+                <label for="nomeReino">Informe o reino:</label>
                 <input type="text" class="form-control" name="nomeReino" 
-                       placeholder="Informe o nome da princesa">
+                       placeholder="Nome">
             </div>
             <hr>
             <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>

@@ -11,40 +11,45 @@
         <form action="{{route('gravaNovaPrincesas')}}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="nomePrincesa">Nome:</label>
+                <label for="nomePrincesa">Informe o nome da princesa:</label>
                 <input type="text" class="form-control" name="nomePrincesa" 
-                       placeholder="Informe o nome da princesa">
+                       placeholder="Ex: Aurora">
             </div>
             <br>
             <div class="form-group">
-                <label for="idadePrincesa">Idade:</label>
+                <label for="idadePrincesa">Informe a idade da princesa:</label>
                 <input type="text" class="form-control" name="idadePrincesa" 
-                       placeholder="Informe a idade da princesa">
+                       placeholder="Ex: 18">
             </div>
-            <div class="form-group">
-                <label for="elemento">Elementos</label><br />
-                <select name="elemento">
-                        @foreach ($elementos as $item)
-                            <option value="{{$item->id}}">{{$item->Nome}}</option>
-                        @endforeach
-                </select>
-             </div>
-             <div class="form-group">
-                <label for="tipo">Tipos</label><br />
-                <select name="tipo">
-                        @foreach ($tipos as $item)
-                            <option value="{{$item->id}}">{{$item->Nome}}</option>
-                        @endforeach
-                </select>
-             </div>
-             <div class="form-group">
-                <label for="reino">Reino</label><br />
-                <select name="reino">
-                        @foreach ($reinos as $item)
-                            <option value="{{$item->id}}">{{$item->Nome}}</option>
-                        @endforeach
-                </select>
-             </div>
+            <br>
+            <div class="form-group seletor">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <label for="elemento">Elementos</label><br />
+                        <select name="elemento">
+                                @foreach ($elementos as $item)
+                                    <option value="{{$item->id}}">{{$item->Nome}}</option>
+                                @endforeach
+                        </select>
+                    </div>
+                    <div class="col-sm-1">
+                        <label for="tipo">Tipos</label><br />
+                        <select name="tipo">
+                                @foreach ($tipos as $item)
+                                    <option value="{{$item->id}}">{{$item->Nome}}</option>
+                                @endforeach
+                        </select>
+                    </div>
+                    <div class="col-sm-1">
+                        <label for="reino">Reino</label><br />
+                        <select name="reino">
+                                @foreach ($reinos as $item)
+                                    <option value="{{$item->id}}">{{$item->Nome}}</option>
+                                @endforeach
+                        </select>
+                    </div>
+                </div>
+            </div>
             <hr>
             <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>
             <button onclick="window.location.href='{{route('inicio')}}';" type="button" 

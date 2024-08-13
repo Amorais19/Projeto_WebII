@@ -18,6 +18,9 @@
                     <tr>
                         <th>Nome</th>
                         <th>Idade</th>
+                        <th>Elemento</th>
+                        <th>Tipo</th>
+                        <th>Reino</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,14 +28,16 @@
                     <tr>
                         <td>{{ $item->Nome }}</td>
                         <td>{{ $item->Idade }}</td>
+                       <!--
+                        $i['nome'];
+                        $i['elementos']['nome'];
+                        -->
+
                         <td style="text-align:center">
-                            <a href="/princesas" class="btn btn-success">Cadastra princesas</a>
+                            <a href="/princesas/edita/{{$item->id}}" class="btn btn-outline-primary">Editar</a>
                         </td>
                         <td style="text-align:center">
-                            <a href="/princesas/edita/{id}" class="btn btn-outline-primary">Editar</a>
-                        </td>
-                        <td style="text-align:center">
-                            <a href="/princesas/apagar/{id}" class="btn btn-outline-danger" 
+                            <a href="/princesas/apagar/{{$item->id}}" class="btn btn-outline-danger" 
                                onclick="return confirm('Tem certeza de que deseja remover?');">Deletar</a>
                         </td>
                     </tr>  

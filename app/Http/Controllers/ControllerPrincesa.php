@@ -39,12 +39,11 @@ class ControllerPrincesa extends Controller
     public function store(Request $request)
     {
         $dados = new Princesas();
-        $dados->princesa_id = $request->input('princesa');
-        $dados->elemento_id = $request->input('elemento_id');
-        $dados->tipo_id = $request->input('tipo_id');
-        $dados->reino_id = $request->input('reino_id');
-        $dados->nomePrincesa = $request->input('nomePrincesa');
-        $dados->idade= $request->input('idadePrincesa');
+        $dados->elemento_id = $request->input('elemento');
+        $dados->tipo_id = $request->input('tipo');
+        $dados->reino_id = $request->input('reino');
+        $dados->Nome = $request->input('nomePrincesa');
+        $dados->Idade= $request->input('idadePrincesa');
         $dados->save();
         return redirect('/princesas')->with('success', 'Nova princesa cadastrada com sucesso!');
     }

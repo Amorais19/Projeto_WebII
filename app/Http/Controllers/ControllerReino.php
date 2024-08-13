@@ -31,9 +31,9 @@ class ControllerReino extends Controller
     public function store(Request $request)
     {
         $dados = new Reino();
-        $dados->Nome = $request->input('nomeReino');
+        $dados->NomeReino = $request->input('nomeReino');
         $dados->save();
-        return redirect('/reinos')->with('success', 'Novo reino cadastrado com sucesso!');
+        return redirect('/reino')->with('success', 'Novo reino cadastrado com sucesso!');
     }
 
     /**
@@ -51,7 +51,7 @@ class ControllerReino extends Controller
     {
         $dados = Reino::find($id);
         if(isset($dados)){
-            return view('editaReino', compact('dados'));
+            return view('editaReinos', compact('dados'));
         }
     }
 
@@ -64,9 +64,9 @@ class ControllerReino extends Controller
         if(isset($dados)){
             $dados->Nome = $request->input('nomeReino');
             $dados->save();
-            return redirect('/reinos')->with('success', 'Reino atualizado com sucesso!');
+            return redirect('/reino')->with('success', 'Reino atualizado com sucesso!');
         }
-        return redirect('/reinos')->with('danger', 'Erro ao tentar atualizar o reino.');
+        return redirect('/reino')->with('danger', 'Erro ao tentar atualizar o reino.');
     }
 
     /**
@@ -77,9 +77,9 @@ class ControllerReino extends Controller
         $dados = Reino::find($id);
         if(isset($dados)){
             $dados->delete();
-            return redirect('/reinos')->with('success', 'Reino deletado com sucesso!');
+            return redirect('/reino')->with('success', 'Reino deletado com sucesso!');
         }
-        return redirect('/reinos')->with('danger', 'Erro ao tentar deletar o reino.');
+        return redirect('/reino')->with('danger', 'Erro ao tentar deletar o reino.');
     }
 
     public function pesquisarReino(){

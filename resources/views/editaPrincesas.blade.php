@@ -8,7 +8,7 @@
                 <h1 class="mt-5 text-center">Atualize os dados da princesa</h1>
             </div>
         </div>
-        <form action="/autor/{{$dados->id}}" method="POST">
+        <form action="/princesas/{{$dados->id}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="nomePrincesa">Nome:</label>

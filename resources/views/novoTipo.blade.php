@@ -11,9 +11,9 @@
         <form action="{{route('gravaNovoTipo')}}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="nomeTipo">Nome:</label>
+                <label for="nomeTipo">Informe o tipo:</label>
                 <input type="text" class="form-control" name="nomeTipo" 
-                       placeholder="Informe o nome da princesa">
+                       placeholder="Ex: Sereia">
             </div>
             <hr>
             <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>
