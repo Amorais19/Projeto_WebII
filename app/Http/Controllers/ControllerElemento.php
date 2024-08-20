@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Elementos;
+use App\Models\Princesas;
 use Illuminate\Support\Facades\DB;
 
 class ControllerElemento extends Controller
@@ -76,10 +77,16 @@ class ControllerElemento extends Controller
     {
         $dados = Elementos::find($id);
         if(isset($dados)){
-            $dados->delete();
-            return redirect('/elementos')->with('success', 'Elemento deletado com sucesso!');
-        }
-        return redirect('/elementos')->with('danger', 'Erro ao tentar deletar o elemento.');
+            $princesas = Princesas::where('elemento_id', '=', $id)->first();
+            if(!isset($princesas)){
+                $dados->delete();
+                return redirect('/elementos')->with('success', 'Cadastro do elemento deletado com sucesso!!');
+            }else{
+                return redirect('/princesas')->with('danger', 'Cadastro não pode ser excluído!!');
+            } 
+        }else{
+            return redirect('/elementos')->with('danger', 'Erro ao tentar deletar o elemento.');
+        } 
     }
 
     public function pesquisarElemento(){

@@ -8,5 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Elementos extends Model
 {
     use HasFactory;
-    protected $fillable = ['nome_elemento'];
+    protected $fillable = ['Nome'];
+    public function princesas (){
+        return $$this->hasMany('App\Models\Princesas', 'elemento_id');
+    }
 }

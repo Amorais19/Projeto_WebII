@@ -17,7 +17,26 @@ class ControllerPrincesa extends Controller
      */
     public function index()
     {
+       
+        //$dados = Princesas::with('elementos')->get();       //->with('tipos')->with('reinos')
         $dados = Princesas::all();
+        foreach($dados as $item){
+            $elemento = Elementos::find($item->elemento_id);
+            
+            $item->NomeElemento = $elemento->Nome;
+        }
+        foreach($dados as $item){
+            $reino = Reino::find($item->reino_id);
+            
+            $item->NomeReino = $reino->Nome;
+        }
+        foreach($dados as $item){
+            $tipo = Tipos::find($item->tipo_id);
+            
+            $item->NomeTipo = $tipo->Nome;
+        }
+        
+        
         return view('exibePrincesas', compact('dados'));
     }
 
@@ -38,12 +57,22 @@ class ControllerPrincesa extends Controller
      */
     public function store(Request $request)
     {
+        $TemTudo = true;
         $dados = new Princesas();
         $dados->elemento_id = $request->input('elemento');
         $dados->tipo_id = $request->input('tipo');
         $dados->reino_id = $request->input('reino');
         $dados->Nome = $request->input('nomePrincesa');
         $dados->Idade= $request->input('idadePrincesa');
+        if(!isset($elemento_id)){
+            $TemTudo = false;
+        }if(!isset($tipo_id)){
+            $TemTudo = false;
+        }if(!isset($reino_id)){
+            $TemTudo = false;
+        }if(!($TemTudo)){
+            return redirect('/princesas')->with('danger', 'Você precisa cadastrar um elemento, um tipo e um reino.');
+        }
         $dados->save();
         return redirect('/princesas')->with('success', 'Nova princesa cadastrada com sucesso!');
     }
@@ -63,7 +92,7 @@ class ControllerPrincesa extends Controller
     {
         $dados = Princesas::find($id);
         if(isset($dados)){
-            return view('editaPrincesa', compact('dados'));
+            return view('editaPrincesas', compact('dados'));
         }
     }
 
@@ -74,8 +103,8 @@ class ControllerPrincesa extends Controller
     {
         $dados = Princesas::find($id);
         if(isset($dados)){
-            $dados->nomePrincesa = $request->input('nomePrincesa');
-            $dados->idade = $request->input('idadePrincesa');
+            $dados->Nome = $request->input('nomePrincesa');
+            $dados->Idade = $request->input('idadePrincesa');
             $dados->save();
             return redirect('/princesas')->with('success', 'Princesa atualizada com sucesso!');
         }

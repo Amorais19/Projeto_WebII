@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Reino;
+use App\Models\Princesas;
 use Illuminate\Support\Facades\DB;
 
 class ControllerReino extends Controller
@@ -31,7 +32,7 @@ class ControllerReino extends Controller
     public function store(Request $request)
     {
         $dados = new Reino();
-        $dados->NomeReino = $request->input('nomeReino');
+        $dados->Nome = $request->input('nomeReino');
         $dados->save();
         return redirect('/reino')->with('success', 'Novo reino cadastrado com sucesso!');
     }
@@ -76,10 +77,16 @@ class ControllerReino extends Controller
     {
         $dados = Reino::find($id);
         if(isset($dados)){
-            $dados->delete();
-            return redirect('/reino')->with('success', 'Reino deletado com sucesso!');
-        }
-        return redirect('/reino')->with('danger', 'Erro ao tentar deletar o reino.');
+            $princesas = Princesas::where('reino_id', '=', $id)->first();
+            if(!isset($princesas)){
+                $dados->delete();
+                return redirect('/reino')->with('success', 'Cadastro do reino deletado com sucesso!!');
+            }else{
+                return redirect('/princesas')->with('danger', 'Cadastro não pode ser excluído!!');
+            } 
+        }else{
+            return redirect('/reino')->with('danger', 'Erro ao tentar deletar o reino.');
+        } 
     }
 
     public function pesquisarReino(){

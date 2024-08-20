@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tipos;
+use App\Models\Princesas;
 use Illuminate\Support\Facades\DB;
 
 class ControllerTipo extends Controller
@@ -74,14 +75,19 @@ class ControllerTipo extends Controller
      */
     public function destroy(string $id)
     {
-        $dados = Tipos::find($id);
-        
-        if(isset($dados)){
-            $dados->delete();
-            return redirect('/tipo')->with('success', 'Tipo deletado com sucesso!');
-        }
-        return redirect('/tipo')->with('danger', 'Erro ao tentar deletar o tipo.');
-        
+        $dados = Tipos::find($id); #busco o tipo
+        if(isset($dados)){ #se houver tipo
+            $princesas = Princesas::where('tipo_id', '=', $id)->first(); #acha a princesa
+            if(!isset($princesas)){# se não houver princesa
+                #$princesas->delete();
+                $dados->delete();
+                return redirect('/tipo')->with('success', 'Cadastro do tipo deletado com sucesso!!');
+            }else{
+                return redirect('/princesas')->with('danger', 'Cadastro não pode ser excluído!!');
+            } 
+        }else{
+            return redirect('/tipo')->with('danger', 'Erro ao tentar deletar o tipo.');
+        } 
     }
 
     public function pesquisarTipo(){

@@ -8,5 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Tipos extends Model
 {
     use HasFactory;
-    protected $fillable = ['nome_tipo'];
+    protected $fillable = ['Nome'];
+    public function princesas (){
+        return $$this->hasMany('App\Models\Princesas', 'tipo_id');
+    }
 }

@@ -24,20 +24,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($dados as $item)
+                    @foreach ($dados as $item => $i)
                     <tr>
-                        <td>{{ $item->Nome }}</td>
-                        <td>{{ $item->Idade }}</td>
+                        <td>{{ $i['Nome']}}</td>
+                        <td>{{ $i['Idade'] }}</td>
+                        <td>{{ $i['NomeElemento'] }}</td>
+                        <td>{{ $i['NomeTipo'] }}</td>
+                        <td>{{ $i['NomeReino'] }}</td>
                        <!--
                         $i['nome'];
                         $i['elementos']['nome'];
                         -->
 
                         <td style="text-align:center">
-                            <a href="/princesas/edita/{{$item->id}}" class="btn btn-outline-primary">Editar</a>
+                            <a href="/princesas/edita/{{$i['id']}}" class="btn btn-outline-primary">Editar</a>
                         </td>
                         <td style="text-align:center">
-                            <a href="/princesas/apagar/{{$item->id}}" class="btn btn-outline-danger" 
+                            <a href="/princesas/apagar/{{$i['id']}}" class="btn btn-outline-danger" 
                                onclick="return confirm('Tem certeza de que deseja remover?');">Deletar</a>
                         </td>
                     </tr>  
@@ -47,4 +50,4 @@
     </div>
 </div>
 </div>
-@endsection,
+@endsection
