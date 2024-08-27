@@ -70,7 +70,7 @@ class ControllerPrincesa extends Controller
             $TemTudo = false;
         }if(!isset($reino_id)){
             $TemTudo = false;
-        }if(!($TemTudo)){
+        }if(($TemTudo)){
             return redirect('/princesas')->with('danger', 'Você precisa cadastrar um elemento, um tipo e um reino.');
         }
         $dados->save();
